@@ -1,5 +1,8 @@
 class PromiseV2{
     constructor(callbackFunction){
+    if (typeof callbackFunction !== 'function') {
+            throw new TypeError('Callback must be a function');
+         }
     this.chainingArray = []
     this.handleError = () =>{};
     this.onResolve = this.onResolve.bind(this);
